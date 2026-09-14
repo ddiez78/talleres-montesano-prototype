@@ -1,13 +1,19 @@
 /* Talleres Montesano — prototipo mobile-first */
 :root {
-  --carbon: #1A1F24;
-  --naranja: #E85D04;
-  --naranja-hover: #d15304;
+  --carbon: #121417;
+  --azul: #0C4A7C;
+  --azul-profundo: #082F52;
+  --azul-niebla: #E7F0F7;
+  --verde: #1FA87A;
+  --verde-hover: #188F68;
+  --verde-niebla: #E6F7F1;
+  --naranja: var(--verde); /* legacy alias → verde */
+  --naranja-hover: var(--verde-hover);
   --papel: #F4F2EE;
   --blanco: #FFFFFF;
   --gris: #5C6570;
   --gris-claro: #E8E6E1;
-  --whatsapp: #128C7E;
+  --whatsapp: #128C7E; /* alineado al verde marca */
   --radius: 12px;
   --shadow: 0 8px 24px rgba(26, 31, 36, 0.08);
   --header-h: 64px;
@@ -997,6 +1003,125 @@ body.nav-open {
   object-fit: cover;
 }
 
+
+
+/* Journey / proceso */
+.journey {
+  padding: clamp(3rem, 7vw, 5.5rem) 0;
+  background: var(--carbon, #1A1F24);
+  color: #F4F2EE;
+}
+.journey .section-head p,
+.journey .section-head .eyebrow { color: rgba(244,242,238,.78); }
+.journey .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: .75rem;
+  font-weight: 700;
+  color: #1FA87A;
+  margin-bottom: .5rem;
+}
+.journey-layout {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+@media (min-width: 900px) {
+  .journey-layout {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .journey-media {
+    position: sticky;
+    top: 5.5rem;
+  }
+}
+.journey-media {
+  position: relative;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #0d1114;
+  box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+.journey-stage {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity .45s ease;
+}
+.journey-stage.is-active { opacity: 1; }
+.journey-stage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.journey-media-caption {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  margin: 0;
+  padding: .35rem .7rem;
+  border-radius: 999px;
+  background: rgba(0,0,0,.55);
+  font-size: .78rem;
+  font-weight: 700;
+}
+.journey-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: .75rem;
+}
+.journey-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: .85rem;
+  padding: 1rem 1.1rem;
+  border-radius: .9rem;
+  border: 1px solid rgba(244,242,238,.12);
+  background: rgba(255,255,255,.03);
+  cursor: pointer;
+  transition: border-color .2s ease, background .2s ease, transform .2s ease;
+}
+.journey-step:hover,
+.journey-step:focus-visible {
+  border-color: rgba(232,93,4,.55);
+  outline: none;
+}
+.journey-step.is-active {
+  border-color: #1FA87A;
+  background: rgba(232,93,4,.12);
+  transform: translateX(2px);
+}
+.journey-num {
+  font-weight: 800;
+  color: #1FA87A;
+  font-size: .95rem;
+  line-height: 1.4;
+}
+.journey-step h3 {
+  margin: 0 0 .35rem;
+  font-size: 1.05rem;
+}
+.journey-step p {
+  margin: 0;
+  color: rgba(244,242,238,.78);
+  font-size: .92rem;
+}
+.journey-step .link-cta {
+  display: inline-block;
+  margin-top: .65rem;
+  color: #fff;
+  font-weight: 700;
+}
+@media (prefers-reduced-motion: reduce) {
+  .journey-stage { transition: none; }
+}
 
 /* Elastic Gallery (accordion) */
 .elastic-gallery {

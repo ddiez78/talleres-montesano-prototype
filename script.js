@@ -160,3 +160,40 @@
     });
   }
 
+  // Journey stages (scroll + click)
+  const journeySteps = Array.from(document.querySelectorAll('.journey-step'));
+  const journeyStages = Array.from(document.querySelectorAll('.journey-stage'));
+  const journeyCaption = document.getElementById('journey-caption');
+  const captions = [
+    '1 / 5 · Llegada',
+    '2 / 5 · Diagnóstico',
+    '3 / 5 · Chapa',
+    '4 / 5 · Pintura',
+    '5 / 5 · Entrega',
+  ];
+  const setJourney = (index) => {
+    journeySteps.forEach((step, i) => step.classList.toggle('is-active', i === index));
+    journeyStages.forEach((stage, i) => stage.classList.toggle('is-active', i === index));
+    if (journeyCaption) journeyCaption.textContent = captions[index] || '';
+  };
+  journeySteps.forEach((step, index) => {
+    step.tabIndex = 0;
+    step.addEventListener('click', () => setJourney(index));
+    step.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        setJourney(index);
+      }
+    });
+  });
+  if ('IntersectionObserver' in window && journeySteps.length) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const idx = journeySteps.indexOf(entry.target);
+        if (idx >= 0) setJourney(idx);
+      });
+    }, { root: null, threshold: 0.6, rootMargin: '-20% 0px -35% 0px' });
+    journeySteps.forEach((step) => io.observe(step));
+  }
+
