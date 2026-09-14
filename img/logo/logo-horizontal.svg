@@ -1,10 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" role="img" aria-label="Talleres Montesano">
-  <g fill="none" stroke="#1A1F24" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+  <g fill="none" stroke="#0C4A7C" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
     <path d="M55 12 L98 37 L98 83 L55 108 L12 83 L12 37 Z"/>
+  </g>
+  <g fill="none" stroke="#1FA87A" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
     <path d="M28 92 L28 42 L55 70 L82 42 L82 92"/>
   </g>
-  <g fill="#1A1F24" font-family="Inter, Manrope, Arial Black, Helvetica, sans-serif">
-    <text x="128" y="52" font-size="28" font-weight="700" letter-spacing="6">TALLERES</text>
-    <text x="128" y="108" font-size="52" font-weight="800" letter-spacing="1">MONTESANO</text>
+  <g font-family="Inter, Manrope, Arial Black, Helvetica, sans-serif">
+    <text x="128" y="52" font-size="28" font-weight="700" letter-spacing="6" fill="#0C4A7C">TALLERES</text>
+    <text x="128" y="108" font-size="52" font-weight="800" letter-spacing="1" fill="#121417">MONTESANO</text>
   </g>
 </svg>
