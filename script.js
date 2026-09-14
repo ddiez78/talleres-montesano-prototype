@@ -139,23 +139,29 @@
   }
 })();
 
-  // Elastic gallery accordion
+  // Elastic gallery accordion (desktop) / snap carousel (mobile)
   const gallery = document.querySelector('.elastic-gallery');
   if (gallery) {
     const cards = Array.from(gallery.querySelectorAll('.elastic-card'));
-    const activate = (card) => {
+    const mq = window.matchMedia('(max-width: 720px)');
+    const activate = (card, scrollInto = false) => {
       cards.forEach((c) => {
         const on = c === card;
         c.classList.toggle('is-active', on);
         c.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
+      if (scrollInto && mq.matches) {
+        card.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
     };
     cards.forEach((card) => {
-      card.addEventListener('mouseenter', () => activate(card));
-      card.addEventListener('focus', () => activate(card));
+      card.addEventListener('mouseenter', () => {
+        if (!mq.matches) activate(card);
+      });
+      card.addEventListener('focus', () => activate(card, true));
       card.addEventListener('click', (e) => {
         if (e.target.closest('.elastic-cta')) return;
-        activate(card);
+        activate(card, true);
       });
     });
   }
