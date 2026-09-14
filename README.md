@@ -38,7 +38,9 @@ prototype/
 | Token | Valor |
 |-------|-------|
 | Carbón | `#1A1F24` |
-| Naranja | `#E85D04` |
+| Verde CTA | `#1FA87A` |
+| Azul | `#0C4A7C` |
+| Negro | `#121417` |
 | Papel | `#F4F2EE` |
 | Fuente | Manrope |
 
