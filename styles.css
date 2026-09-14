@@ -1394,3 +1394,88 @@ body.nav-open {
   }
 }
 
+/* Partners infinite marquee (vanilla InfiniteSlider) */
+.partners-marquee {
+  padding: 0.85rem 0 1rem;
+  background: var(--blanco, #fff);
+  border-bottom: 1px solid rgba(18, 20, 23, 0.08);
+}
+.partners-marquee-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.partners-marquee-label {
+  margin: 0 0 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gris, #5C6570);
+  text-align: center;
+}
+.infinite-slider {
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+}
+.infinite-slider-track {
+  display: flex;
+  width: max-content;
+  gap: 0;
+  animation: infinite-slider-scroll 35s linear infinite;
+}
+.infinite-slider:hover .infinite-slider-track {
+  animation-duration: 55s;
+}
+.infinite-slider-list {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0.75rem;
+}
+.infinite-slider-list li {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3.25rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 0.65rem;
+  background: #fff;
+  border: 1px solid rgba(18, 20, 23, 0.08);
+}
+.infinite-slider-list li.is-dark {
+  background: #121417;
+  border-color: #121417;
+}
+.infinite-slider-list img {
+  display: block;
+  height: 1.75rem;
+  width: auto;
+  max-width: 8.5rem;
+  object-fit: contain;
+  filter: grayscale(0.15);
+  opacity: 0.92;
+}
+@keyframes infinite-slider-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .infinite-slider-track {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    row-gap: 0.65rem;
+  }
+  .infinite-slider-list[aria-hidden="true"] { display: none; }
+  .infinite-slider {
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+}
+
