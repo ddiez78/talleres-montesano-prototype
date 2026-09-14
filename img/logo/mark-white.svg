@@ -1,8 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Talleres Montesano">
   <g fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
     <path d="M60 8 L108 36 L108 84 L60 112 L12 84 L12 36 Z"/>
-  </g>
-  <g fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linejoin="round" stroke-linecap="round">
     <path d="M28 88 L28 40 L60 72 L92 40 L92 88"/>
   </g>
 </svg>

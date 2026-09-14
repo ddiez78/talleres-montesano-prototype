@@ -1,14 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 280" role="img" aria-label="Talleres Montesano">
-  <g transform="translate(120,8)">
-    <g fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M60 8 L108 36 L108 84 L60 112 L12 84 L12 36 Z"/>
-    </g>
-    <g fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
-      <path d="M28 88 L28 40 L60 72 L92 40 L92 88"/>
-    </g>
+  <g transform="translate(120,8)" fill="none" stroke="#FFFFFF" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M60 8 L108 36 L108 84 L60 112 L12 84 L12 36 Z"/>
+    <path d="M28 88 L28 40 L60 72 L92 40 L92 88"/>
   </g>
-  <g font-family="Inter, Manrope, Arial Black, Helvetica, sans-serif" text-anchor="middle">
-    <text x="180" y="175" font-size="26" font-weight="700" letter-spacing="6" fill="#FFFFFF">TALLERES</text>
-    <text x="180" y="235" font-size="44" font-weight="800" letter-spacing="1" fill="#FFFFFF">MONTESANO</text>
+  <g fill="#FFFFFF" font-family="Inter, Manrope, Arial Black, Helvetica, sans-serif" text-anchor="middle">
+    <text x="180" y="175" font-size="26" font-weight="700" letter-spacing="6">TALLERES</text>
+    <text x="180" y="235" font-size="44" font-weight="800" letter-spacing="1">MONTESANO</text>
   </g>
 </svg>
