@@ -1225,6 +1225,23 @@ body.nav-open {
 }
 
 /* Floating WhatsApp */
+.wa-icon {
+  width: 1.35rem;
+  height: 1.35rem;
+  display: block;
+  flex-shrink: 0;
+}
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: 0.85rem;
+  min-width: 2.75rem;
+}
+.btn-icon.btn-sm {
+  padding-inline: 0.7rem;
+  min-width: 2.4rem;
+}
 .wa-fab {
   position: fixed;
   right: 1rem;
@@ -1232,16 +1249,20 @@ body.nav-open {
   z-index: 80;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.1rem;
+  justify-content: center;
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 0;
   border-radius: 999px;
   background: var(--whatsapp);
   color: #fff;
-  font-weight: 700;
-  font-size: 0.95rem;
   text-decoration: none;
   box-shadow: 0 10px 28px rgba(18, 140, 126, 0.35);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.wa-fab .wa-icon {
+  width: 1.55rem;
+  height: 1.55rem;
 }
 .wa-fab:hover {
   transform: translateY(-2px);
@@ -1252,13 +1273,6 @@ body.nav-open {
   outline: 3px solid #fff;
   outline-offset: 3px;
 }
-.wa-fab-icon {
-  width: 1.35rem;
-  height: 1.35rem;
-  flex-shrink: 0;
-}
 @media (max-width: 480px) {
-  .wa-fab-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
-  .wa-fab { padding: 0.95rem; }
   .header-wa { display: none; }
 }
