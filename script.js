@@ -138,3 +138,25 @@
     });
   }
 })();
+
+  // Elastic gallery accordion
+  const gallery = document.querySelector('.elastic-gallery');
+  if (gallery) {
+    const cards = Array.from(gallery.querySelectorAll('.elastic-card'));
+    const activate = (card) => {
+      cards.forEach((c) => {
+        const on = c === card;
+        c.classList.toggle('is-active', on);
+        c.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    };
+    cards.forEach((card) => {
+      card.addEventListener('mouseenter', () => activate(card));
+      card.addEventListener('focus', () => activate(card));
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('.elastic-cta')) return;
+        activate(card);
+      });
+    });
+  }
+
